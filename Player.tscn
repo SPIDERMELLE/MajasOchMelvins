@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmxvcktrx3d84"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_vr43q"]
+[ext_resource type="Texture2D" uid="uid://bui7onqm7ylt2" path="res://icon.svg" id="2_6w40j"]
+[ext_resource type="PackedScene" uid="uid://dy252kw1rifmw" path="res://health.tscn" id="3_2f11r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvae1"]
+size = Vector2(127, 128)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vr43q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_nvae1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6w40j")
+
+[node name="Health" parent="." instance=ExtResource("3_2f11r")]
+
+[node name="Muzzle" type="Marker2D" parent="."]
